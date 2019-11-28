@@ -47,19 +47,26 @@ class Gallery extends Component {
 
   render() {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-        <Box onClick={this.nextPhoto} style={{
-          height: '450px', width: '70vw', padding: '0', margin: '0',
-          backgroundImage: `url(./images/big${this.state.currentImg}.jpg)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }} m={1}>
-        </Box>
-        <Box style={{ fontSize: '24px', fontWeight: 'bold', justifyContent: 'center', display: 'flex' }}>
-          <span style={{ cursor: 'pointer', marginRight: '10px' }} onClick={this.prevPhoto}>‹</span>
-          <span>{this.state.currentImg}/{this.state.numberOfImgs}</span>
-          <span style={{ cursor: 'pointer', marginLeft: '10px' }} onClick={this.nextPhoto}>›</span>
-        </Box>
+      <div style={{
+        backgroundSize: 'cover', fontFamily: '"Roboto", sans-serif', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center'
+      }}>
+        <Header />
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+          <Box onClick={this.nextPhoto} style={{
+            boxShadow: '3px 3px 20px 0px rgba(0,0,0,.7)', marginBottom: '10px',
+            height: '450px', width: '70vw', padding: '0', margin: '0',
+            backgroundImage: `url(./images/big${this.state.currentImg}.jpg)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }} m={1}>
+          </Box>
+          <Box style={{ marginTop: '10px', fontSize: '24px', fontWeight: 'bold', justifyContent: 'center', display: 'flex' }}>
+            <span style={{ cursor: 'pointer', marginRight: '10px' }} onClick={this.prevPhoto}>‹</span>
+            <span>{this.state.currentImg}/{this.state.numberOfImgs}</span>
+            <span style={{ cursor: 'pointer', marginLeft: '10px' }} onClick={this.nextPhoto}>›</span>
+          </Box>
+        </div>
+        <Footer />
       </div>
     )
   }
@@ -71,7 +78,7 @@ const AboutMe = () =>
     backgroundSize: 'cover', fontFamily: '"Roboto", sans-serif', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center'
   }}>
     <Header />
-    <div style={{boxShadow: '3px 3px 20px 0px rgba(0,0,0,1)', padding: '20px', minWidth: '350px', minHeight: '300px', backgroundColor: 'rgba(0, 0, 0, 0.7)', display: 'flex', justifyContent: 'space-around', alignItems: 'center', flexWrap: 'wrap' }}>
+    <div style={{ boxShadow: '3px 3px 20px 0px rgba(0,0,0,1)', padding: '20px', minWidth: '350px', minHeight: '300px', backgroundColor: 'rgba(0, 0, 0, 0.7)', display: 'flex', justifyContent: 'space-around', alignItems: 'center', flexWrap: 'wrap' }}>
       <div style={{
         backgroundImage: 'url(./images/aboutme.jpg)',
         padding: '20px',
@@ -101,7 +108,7 @@ const Contact = () =>
   }}>
     <Header />
 
-    <div style={{boxShadow: '3px 3px 20px 0px rgba(0,0,0,1)', color: 'white', padding: '20px', minWidth: '350px', minHeight: '300px', backgroundColor: 'rgba(0, 0, 0, 0.7)', display: 'flex', justifyContent: 'space-around', alignItems: 'center', flexWrap: 'wrap' }}>
+    <div style={{ boxShadow: '3px 3px 20px 0px rgba(0,0,0,1)', color: 'white', padding: '20px', minWidth: '350px', minHeight: '300px', backgroundColor: 'rgba(0, 0, 0, 0.7)', display: 'flex', justifyContent: 'space-around', alignItems: 'center', flexWrap: 'wrap' }}>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.770168374606!2d19.94403051529857!3d50.053136579422564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b6a94e3a889%3A0x42b468145b2bccc9!2sMiodowa%2C%20Krak%C3%B3w!5e0!3m2!1spl!2spl!4v1574948878596!5m2!1spl!2spl" style={{ marginLeft: '20px', width: "400", height: "300", frameborder: "0" }} ></iframe>
       <div style={{
         display: 'flex', flexDirection: 'column', justifyContent: 'center',
@@ -117,7 +124,7 @@ const Contact = () =>
   </div>
 
 
-const Header = () => <NavLink to='/' style={{ textDecoration: 'none', fontSize: '36px', fontWeight: 'bold', margin: '20px', alignSelf: 'flex-start', color: 'white', paddingLeft: '20px' }}>
+const Header = () => <NavLink to='/' style={{ textShadow: '1px 1px rgba(0,0,0,.7)', textDecoration: 'none', fontSize: '36px', fontWeight: 'bold', margin: '20px', alignSelf: 'flex-start', color: 'white', paddingLeft: '20px' }}>
   ART <span style={{ color: 'red' }}>GALLERY</span>
 </NavLink>
 
@@ -146,7 +153,7 @@ const Home = () =>
   }}>
     <Header />
     <div style={{ maxWidth: "1280px" }}>
-      <div style={{boxShadow: '3px 3px 20px 0px rgba(0,0,0,1)', fontFamily: 'Monospace', fontSize: '30px', minWidth: '300px', height: '40vh', backgroundColor: 'rgba(0, 0, 0, 0.7)', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center' }}>
+      <div style={{ boxShadow: '3px 3px 20px 0px rgba(0,0,0,1)', fontFamily: 'Monospace', fontSize: '30px', minWidth: '300px', height: '40vh', backgroundColor: 'rgba(0, 0, 0, 0.7)', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center' }}>
         <NavLink style={{ color: 'white', textDecoration: 'none' }} to='/gallery'>Gallery</NavLink>
         <NavLink style={{ color: 'white', textDecoration: 'none' }} to='/aboutme'>About Me</NavLink>
         <NavLink style={{ color: 'white', textDecoration: 'none' }} to='/contact'>Contact</NavLink>
