@@ -97,7 +97,7 @@ const Contact = () => <div style={{ padding: '20px', minWidth: '350px', minHeigh
 </div>
 
 
-const Header = () => <NavLink to='/' style={{ textDecoration: 'none', fontSize: '36px', fontWeight: 'bold', margin: '20px', alignSelf: 'flex-start', color: 'white',paddingLeft:'20px' }}>
+const Header = () => <NavLink to='/' style={{ textDecoration: 'none', fontSize: '36px', fontWeight: 'bold', margin: '20px', alignSelf: 'flex-start', color: 'white', paddingLeft: '20px' }}>
   ART <span style={{ color: 'red' }}>GALLERY</span>
 </NavLink>
 
@@ -119,27 +119,28 @@ const subPage = props => {
   }
 }
 
-const Home = () => <div style={{ fontFamily: 'Monospace', fontSize: '30px', minWidth: '300px', height: '40vh', backgroundColor: 'rgba(0, 0, 0, 0.7)', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center' }}>
-  <NavLink style={{ color: 'white', textDecoration: 'none' }} to='/gallery'>Gallery</NavLink>
-  <NavLink style={{ color: 'white', textDecoration: 'none' }} to='/aboutme'>About Me</NavLink>
-  <NavLink style={{ color: 'white', textDecoration: 'none' }} to='/contact'>Contact</NavLink>
-</div>
-
-const App = () => <HashRouter>
+const Home = () =>
   <div style={{
     backgroundImage: `url(./images/big1.jpg)`,
     backgroundSize: 'cover', fontFamily: '"Roboto", sans-serif', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center'
   }}>
     <Header />
     <div style={{ maxWidth: "1280px" }}>
+      <div style={{ fontFamily: 'Monospace', fontSize: '30px', minWidth: '300px', height: '40vh', backgroundColor: 'rgba(0, 0, 0, 0.7)', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center' }}>
+        <NavLink style={{ color: 'white', textDecoration: 'none' }} to='/gallery'>Gallery</NavLink>
+        <NavLink style={{ color: 'white', textDecoration: 'none' }} to='/aboutme'>About Me</NavLink>
+        <NavLink style={{ color: 'white', textDecoration: 'none' }} to='/contact'>Contact</NavLink>
 
-      <Route path='/:subpage' component={subPage} />
-      <Route path exact='/' component={Home} />
+
+      </div>
 
     </div>
-
     <Footer />
   </div>
+
+const App = () => <HashRouter>
+  <Route path='/:subpage' component={subPage} />
+  <Route path exact='/' component={Home} />
 </HashRouter>
 
 ReactDOM.render(
